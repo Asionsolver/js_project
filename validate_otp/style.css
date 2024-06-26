@@ -1,0 +1,58 @@
+body {
+  background-color: #0e0b0b;
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.otp-box-container {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  height: 100vh;
+}
+
+.otp-box-container h1 {
+  color: #fff;
+  font-size: 4rem;
+
+  margin-bottom: 2rem;
+}
+
+.otp-box-container .otp-box-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.otp-expire {
+  color: #fff;
+  font-size: 2rem;
+  margin-top: 2rem;
+}
+
+.otp-box-container .otp-box-list .otp-box {
+  width: 3rem;
+  height: 3rem;
+  font-size: 2rem;
+  text-align: center;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  color: #fff;
+  background-color: #ca0ed0;
+  box-shadow: 1px 1px 1px 1px rgba(9, 223, 6, 0.7);
+}
+
+.generate-otp {
+  color: #fff;
+  font-size: 2.5rem;
+  margin-top: 2rem;
+  cursor: pointer;
+}
+
+.otp-validate-message {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}

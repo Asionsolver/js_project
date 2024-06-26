@@ -12,23 +12,19 @@ function expireOTP() {
     time--;
   }, intValTime);
 
-  const totalTimeOut =setTimeout(function () {
+  const totalTimeOut = setTimeout(function () {
     otpExpireElement.innerText = `OTP has expired`;
     clearInterval(interVal);
     generateOTP();
   }, totalTime);
 
-    const otpElement = document.getElementById("result-id");
+  const otpElement = document.getElementById("result-id");
 
-    if (otpElement.innerText === "OTP has been validated successfully") {
-      clearInterval(interVal);
-      clearTimeout(totalTimeOut);
-      otpExpireElement.innerText = `OTP has been validated`;
-    }
-
-   
- 
-
+  if (otpElement.innerText === "OTP has been validated successfully") {
+    clearInterval(interVal);
+    clearTimeout(totalTimeOut);
+    otpExpireElement.innerText = `OTP has been validated`;
+  }
 }
 
 function tackleOTPBoxes() {
@@ -46,10 +42,24 @@ function tackleOTPBoxes() {
     }
 
     const nextElement = target.nextElementSibling;
+
     if (nextElement) {
       nextElement.focus();
     }
     OTPValidate();
+  });
+
+  boxes.addEventListener("keydown", (e) => {
+    const target = e.target;
+    const value = target.value;
+
+    if (e.key === "Backspace" && value === "") {
+      const previousElement = target.previousElementSibling;
+      if (previousElement) {
+          previousElement.focus();
+          previousElement.value = "";
+      }
+    }
   });
 }
 
